@@ -48,5 +48,4 @@ div.pattern {
     background-image: url(IIIXL_PIXELS.jpeg);
     background-size: cover;
     background-repeat: none;
-    animation: bgmove 100s linear infinite;
 }
