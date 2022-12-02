@@ -10,6 +10,7 @@ body {
     height: 100vh;
     cursor: none;
     background-color: black;
+    overflow: hidden;
 }
 
 div.cursor {
