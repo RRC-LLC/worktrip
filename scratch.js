@@ -29,7 +29,7 @@ const setupCanvas = function (canvas) {
     const bodyTag = document.querySelector("body")
 
     const w = window.innerWidth
-    const h = window.innerHeight
+    const h = bodyTag.offsetHeight
     const dpi = window.devicePixelRatio
 
     canvas.width = w *dpi
