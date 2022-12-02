@@ -2,7 +2,15 @@ const cursor = document.querySelector("div.cursor")
 const canvasTag = document.querySelector("canvas.in")
 
 let isMouseDown = false
+let isTouch = false
 
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    // true for mobile device
+    isTouch = true
+  }else{
+    // false for not mobile device
+    isTouch = false
+  }
 
 const growCursor = function () {
     cursor.classList.add("is-down")
@@ -69,23 +77,48 @@ const moveDraw = function (canvas, x, y) {
 
 setupCanvas(canvasTag)
 
+if (isTouch) {
+
+    cursor.style.display = "none"
+    
+    document.addEventListener("touchstart", function (event) {
+        isMouseDown = true
+        growCursor()
+        startDraw(canvasTag, event.pageX, event.pageY)
+    })
+    
+    document.addEventListener("touchend", function () {
+        isMouseDown = false
+        shrinkCursor()
+    })
+    
+    document.addEventListener("touchmove", function (event) {
+        moveCursor(event.pageX, event.pageY)
+        moveDraw(canvasTag, event.pageX, event.pageY)
+    })
 
 
-document.addEventListener("touchstart", function (event) {
-    isMouseDown = true
-    growCursor()
-    startDraw(canvasTag, event.pageX, event.pageY)
-})
+} else {
 
-document.addEventListener("touchend", function () {
-    isMouseDown = false
-    shrinkCursor()
-})
+    document.addEventListener("mousedown", function (event) {
+        isMouseDown = true
+        growCursor()
+        startDraw(canvasTag, event.pageX, event.pageY)
+    })
+    
+    document.addEventListener("mouseup", function () {
+        isMouseDown = false
+        shrinkCursor()
+    })
+    
+    document.addEventListener("mousemove", function (event) {
+        moveCursor(event.pageX, event.pageY)
+        moveDraw(canvasTag, event.pageX, event.pageY)
+    })
 
-document.addEventListener("touchmove", function (event) {
-    moveCursor(event.pageX, event.pageY)
-    moveDraw(canvasTag, event.pageX, event.pageY)
-})
+}
+
+
 
 window.addEventListener("resize", function () {
     setupCanvas(canvasTag)
