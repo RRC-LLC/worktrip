@@ -71,18 +71,18 @@ setupCanvas(canvasTag)
 
 
 
-document.addEventListener("mousedown", function (event) {
+document.addEventListener("touchstart", function (event) {
     isMouseDown = true
     growCursor()
     startDraw(canvasTag, event.pageX, event.pageY)
 })
 
-document.addEventListener("mouseup", function () {
+document.addEventListener("touchend", function () {
     isMouseDown = false
     shrinkCursor()
 })
 
-document.addEventListener("mousemove", function (event) {
+document.addEventListener("touchmove", function (event) {
     moveCursor(event.pageX, event.pageY)
     moveDraw(canvasTag, event.pageX, event.pageY)
 })
