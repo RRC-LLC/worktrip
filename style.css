@@ -44,7 +44,7 @@ canvas {
     left: 0;
     width: 100%;
     height: 100%;
-    mix-blend-mode: darken;
+    mix-blend-mode: lighten;
 }
 
 div.pattern {
@@ -58,3 +58,30 @@ div.pattern {
     background-size: cover;
     background-repeat: none;
 }
+
+section.scratched-out {
+    mix-blend-mode: darken;
+  }
+  
+  div.manifesto {
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  div.manifesto img {
+    width: 50%;
+    height: 100%;
+    object-fit: contain;
+    filter: invert(98%) sepia(1%) saturate(1146%) hue-rotate(195deg) brightness(120%) contrast(100%);
+  }
+
+
+  
+  

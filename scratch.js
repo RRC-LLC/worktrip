@@ -1,5 +1,6 @@
 const cursor = document.querySelector("div.cursor")
-const canvasTag = document.querySelector("canvas.in")
+const canvasIn = document.querySelector("canvas.in")
+const canvasOut = document.querySelector("canvas.out")
 
 let isMouseDown = false
 let isTouch = false
@@ -41,14 +42,19 @@ const setupCanvas = function (canvas) {
     const context = canvas.getContext("2d")
     context.scale(dpi, dpi)
 
-    context.fillStyle = "#000000"
-    context.strokeStyle = "#ffffff"
+    if (canvas.classList.contains("in")) {
+        context.fillStyle = "#000000"
+          context.strokeStyle = "#ffffff"
+      } else {
+        context.fillStyle = "#ffffff"
+          context.strokeStyle = "#000000"
+      }
 
     context.lineWidth = 80
     context.lineCap = "round"
     context.lineJoin = "round"
 
-    context.shadowBlur = 10
+    context.shadowBlur = 20
     context.shadowColor = context.strokeStyle
 
     context.rect(0, 0, w, h)
@@ -75,7 +81,9 @@ const moveDraw = function (canvas, x, y) {
 }
 
 
-setupCanvas(canvasTag)
+setupCanvas(canvasIn)
+setupCanvas(canvasOut)
+
 
 if (isTouch) {
 
@@ -84,7 +92,8 @@ if (isTouch) {
     document.addEventListener("touchstart", function (event) {
         isMouseDown = true
         growCursor()
-        startDraw(canvasTag, event.pageX, event.pageY)
+        startDraw(canvasIn, event.pageX, event.pageY)
+        startDraw(canvasOut, event.pageX, event.pageY)
     })
     
     document.addEventListener("touchend", function () {
@@ -94,7 +103,8 @@ if (isTouch) {
     
     document.addEventListener("touchmove", function (event) {
         moveCursor(event.pageX, event.pageY)
-        moveDraw(canvasTag, event.pageX, event.pageY)
+        moveDraw(canvasIn, event.pageX, event.pageY)
+        moveDraw(canvasOut, event.pageX, event.pageY)
     })
 
 
@@ -103,7 +113,8 @@ if (isTouch) {
     document.addEventListener("mousedown", function (event) {
         isMouseDown = true
         growCursor()
-        startDraw(canvasTag, event.pageX, event.pageY)
+        startDraw(canvasIn, event.pageX, event.pageY)
+        startDraw(canvasOut, event.pageX, event.pageY)
     })
     
     document.addEventListener("mouseup", function () {
@@ -113,7 +124,8 @@ if (isTouch) {
     
     document.addEventListener("mousemove", function (event) {
         moveCursor(event.pageX, event.pageY)
-        moveDraw(canvasTag, event.pageX, event.pageY)
+        moveDraw(canvasIn, event.pageX, event.pageY)
+        moveDraw(canvasOut, event.pageX, event.pageY)
     })
 
 }
@@ -121,5 +133,6 @@ if (isTouch) {
 
 
 window.addEventListener("resize", function () {
-    setupCanvas(canvasTag)
+    setupCanvas(canvasIn)
+    setupCanvas(canvasOut)
 })
