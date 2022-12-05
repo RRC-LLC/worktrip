@@ -130,9 +130,3 @@ if (isTouch) {
 
 }
 
-
-
-window.addEventListener("resize", function () {
-    setupCanvas(canvasIn)
-    setupCanvas(canvasOut)
-})
