@@ -70,7 +70,7 @@ section.scratched-out {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,8 +78,6 @@ section.scratched-out {
   
   div.manifesto img {
     width: 50%;
-    height: 100%;
-    object-fit: contain;
     filter: invert(98%) sepia(1%) saturate(1146%) hue-rotate(195deg) brightness(120%) contrast(100%);
   }
 
