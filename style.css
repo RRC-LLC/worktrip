@@ -88,6 +88,11 @@ div.info-container {
     background-color: #ff0000;
   }
 
+  div.tickets input:active {
+    cursor: pointer;
+    background-color: #a80000;
+  }
+
   
   
   @media screen and (max-width: 605px) {
