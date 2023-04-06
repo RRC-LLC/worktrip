@@ -103,5 +103,7 @@ div.info-container {
   @media screen and (max-width: 605px) {
     div.tickets input {
         font-size: 36px;
+        border: 6px solid white;
+
     }
   }
