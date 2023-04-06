@@ -10,27 +10,26 @@
     <link rel="stylesheet" href="https://use.typekit.net/xwx4ajl.css">
     <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   </head>
   <body>
 
-    <section class="scratched-in">
-      <canvas class="in"></canvas>
-    </section>
-    <section class="scratched-out">
-      <div class="info">
-        <img src="assets/worktrip_fullinfo.svg" class="logo">
+    <section class="wrapper">
+      <div class="info-container">
+            <img src="assets/WorkTrip.svg" class="logo">
+      </div>
+      
+      <div class="tickets">
         <form action="https://www.thetranspecos.com/">
           <input type="submit" value="Get Tickets" />
-         </form>
+        </form>
       </div>
-      <canvas class="out"></canvas>
-    </section>
+  </section>
 
-    <div class="cursor"></div>
 
     <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js"></script>
     <script src="scripts/frag.js"></script>
     <script src="scripts/canvas.js"></script>
-    <script src="scripts/scratch.js"></script>
   </body>
 </html>

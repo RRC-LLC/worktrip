@@ -1,25 +1,15 @@
 const canvas = document.createElement("canvas")
 const sandbox = new GlslCanvas(canvas)
 
-document.querySelector(".scratched-in").appendChild(canvas)
+document.querySelector(".info-container").appendChild(canvas)
 
-const sizer = function () {
-    const ww = window.innerWidth
-    const wh = window.innerHeight
-    const dpi = window.devicePixelRatio
+canvas.width="100%"
+canvas.height="100%"
+canvas.style.position="absolute"
+canvas.style.top="0"
+canvas.style.left="0"
+canvas.style.width = "100%"
+canvas.style.height = "100%"
 
-    const s = Math.max(ww, wh)
-
-    canvas.width = s * dpi
-    canvas.height = s * dpi
-    canvas.style.width = s + "px"
-    canvas.style.height = s + "px"
-}
-
-sizer()
-window.addEventListener("resize", function () {
-    sizer()
-})
 
 sandbox.load(frag[0])
-sandbox.setUniform("seed", Math.random())
