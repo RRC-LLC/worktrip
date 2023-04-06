@@ -22,6 +22,11 @@ body {
     user-select: none;
 }
 
+input {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
 canvas {
     mix-blend-mode: darken;
 }
