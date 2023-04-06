@@ -84,6 +84,7 @@ section.scratched-out {
   
   div.info img {
     width: 80%;
+    max-height: 95vh;
     filter: invert(98%) sepia(1%) saturate(1146%) hue-rotate(195deg) brightness(120%) contrast(100%);
   }
 
