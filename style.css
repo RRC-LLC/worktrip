@@ -11,7 +11,6 @@ body {
     font-size: 16px;
     line-height: 1.5;
     height: 100vh;
-    cursor: none;
     background-color: black;
     overflow: hidden;
 
@@ -22,24 +21,6 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
-
-div.cursor {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
-    background-color: #efefef;
-    border: 2px solid black;
-    border-radius: 50%;
-    transition: width 0.25s, height 0.25s;
-}
-
-div.cursor.is-down {
-    width: 80px;
-    height: 80px;
 }
 
 canvas {
@@ -92,13 +73,17 @@ section.scratched-out {
     display: flex;
     width: 100%;
     justify-content: center;
+    z-index: 10;
+    background-color: none;
   }
 
   div.info input {
     width: 80%;
     padding: 20px 0;
     border-radius: 0;
-    border: 3px solid white;
+    color: white;
+    background: transparent;
+    border: 10px solid white;
     font-size: 64px;
     letter-spacing: -2%;
     text-transform: uppercase;
@@ -107,8 +92,12 @@ section.scratched-out {
     font-style: normal;
   }
 
+  div.info input:active {
+    background-color: #d20000;
+  }
+
   div.info input:hover {
-    background-color: #efefef;
+    cursor: pointer;
   }
 
   
