@@ -92,7 +92,14 @@ div.info-container {
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 900;
     font-style: normal;
-    pointer-events: none;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+  }
+
+  div.tickets input:hover {
+    cursor: pointer;
+    background-color: #f4c600;
+    color: #000;
   }
 
   div.footer {
