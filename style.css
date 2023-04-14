@@ -36,10 +36,11 @@ canvas {
 section.wrapper {
     display: flex;
     min-height: 100vh;
+    padding-top: 48px;
     width: 90%;
     flex-direction: column;
     justify-content: center;
-    gap: 3em;
+    gap: 2em;
 }
 
 div.pattern {
@@ -58,6 +59,7 @@ div.info-container {
     background-color: rgb(0, 0, 0);
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
@@ -74,15 +76,16 @@ div.info-container {
     justify-content: center;
     z-index: 10;
     background-color: none;
+    padding: 24px 0;
   }
 
   div.tickets input {
     width: 100%;
     padding: 20px 0;
     border-radius: 0;
-    color: white;
-    background-color: #d20000;
-    border: 10px solid white;
+    color: #fff;
+    background-color: #de1215;
+    border: 10px solid #f4c600;
     font-size: 72px;
     letter-spacing: -2%;
     text-transform: uppercase;
@@ -108,10 +111,14 @@ div.info-container {
   }
   
   
-  @media screen and (max-width: 605px) {
+  @media screen and (max-width: 615px) {
     div.tickets input {
         font-size: 36px;
-        border: 6px solid white;
+        border: 6px solid #f4c600;
 
+    }
+
+    div.tickets form {
+      padding: 24px 0 0 0;
     }
   }
